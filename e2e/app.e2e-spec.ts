@@ -1,6 +1,8 @@
 import { JoesPage } from './app.po';
 
 
+//the spec file is where the tests go
+
 
 describe('selenium App', () => {
   let page: JoesPage;
@@ -11,9 +13,16 @@ describe('selenium App', () => {
 
   it('should display "this is joe\'s text"', () => {
     page.navigateTo();
-    console.log('heres the log:');
-    console.log(page.getTitleText);
-    console.log(page);
     expect(page.getTitleText()).toEqual('this is joe\'s text');
+  });
+
+  it('should change the old text to new text', () => {
+    page.navigateTo();
+    expect(page.changeText()).toEqual('new text');
+  });
+
+  it('should fill the input with joseph', () => {
+    page.navigateTo();
+    expect(page.testInput()).toEqual('joseph');
   });
 });

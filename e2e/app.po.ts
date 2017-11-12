@@ -19,4 +19,13 @@ export class JoesPage {
     // Get the home page heading element reference
     return element(by.id('hello')).getText();
   }
+
+  changeText(){
+    element(by.tagName('button')).click();
+    return element(by.id('dynamic-text')).getText();
+  }
+  testInput(){
+    element(by.tagName('input')).sendKeys('joseph');
+    return element(by.tagName('input')).getAttribute('value');
+  }
 }
